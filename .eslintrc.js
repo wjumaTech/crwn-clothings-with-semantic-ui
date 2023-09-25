@@ -30,9 +30,12 @@ module.exports = {
   "rules": {
     "jsx-quotes": [3, "prefer-single"],
     "semi": ["error"],
+    "no-unused-vars": [2, { "vars": "all", "varsIgnorePattern": "[iI]gnored" }], //after-used
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/require-default-props": 0,
+    "react/jsx-no-target-blank": 0,
   }
 }
