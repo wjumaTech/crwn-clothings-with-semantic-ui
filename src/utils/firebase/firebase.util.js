@@ -33,11 +33,30 @@ provider.setCustomParameters({
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (userAuth) => {
+
   const userDocRef = await doc(db, 'users', userAuth.uid);
   const userSnapshot = await getDoc(userDocRef);
+
+  // If user not exist in a database, then:
   if (!userSnapshot.exist) {
-    console.log('El usuario no existe en la base de datos');
+    const { displayName, email } = userAuth;
+    const createAt = new Date();
+
+    try {
+      await setDoc(userDocRef, {
+        displayName,
+        email,
+        createAt
+      });
+    } catch (err) {
+      console.log("Error while creating user", err.message);
+      throw new Error(err);
+    }
   }
+
+  // If user exist return userDocRef
+  return userDocRef;
+
 };
 
 export const auth = getAuth();
