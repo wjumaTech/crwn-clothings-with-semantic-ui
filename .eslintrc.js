@@ -28,9 +28,8 @@ module.exports = {
     "react"
   ],
   "rules": {
-    "jsx-quotes": [3, "prefer-single"],
     "semi": ["error"],
-    "no-unused-vars": [2, { "vars": "all", "varsIgnorePattern": "[iI]gnored" }], //after-used
+    "no-unused-vars": [1, { "vars": "all", "varsIgnorePattern": "[iI]gnored" }], //after-used
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/react-in-jsx-scope": "off",

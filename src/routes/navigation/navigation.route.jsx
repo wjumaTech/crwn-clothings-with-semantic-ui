@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
 export const Navigation = () => {
   return (
@@ -7,10 +7,10 @@ export const Navigation = () => {
     <div className="ui secondary blue inverted menu"> 
 			<div className="container ui">
 				<div className="header item">CRWN CLOTHINGS</div>
-				<a href="/" className="item">Home</a>
-				<a href="/shop" className="item">Shop</a>
+				<Link className="item" to="/">Home</Link>
+				<Link className="item" to="/shop">Shop</Link>
 				<div className="right menu">
-					<a className="ui item">Login</a>
+					<Link className="ui item" to="/sign-in">Login</Link>
 				</div>
 			</div>
 		</div>

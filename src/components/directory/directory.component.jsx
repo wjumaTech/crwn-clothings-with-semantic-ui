@@ -4,9 +4,6 @@ import * as _ from 'lodash';
 import { CategoryItem } from '../category-item/category-item.component';
 
 export const Directory = ({ categories }) => {
-
-  console.log(categories);
-
   return (
     <div className="directory"> 
       <div className="ui three column grid">
